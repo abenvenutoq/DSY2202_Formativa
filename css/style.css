@@ -1,0 +1,275 @@
+/* ==========================================
+   VARIABLES CSS (Requisito Avanzado 1)
+   ========================================== */
+:root {
+    --color-primario: #2c3e50;
+    --color-secundario: #e67e22;
+    --color-fondo: #ecf0f1;
+    --color-texto: #333333;
+    --color-blanco: #ffffff;
+    --color-descuento: #e74c3c;
+    --fuente-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --sombra-card: 0 4px 8px rgba(0,0,0,0.1);
+    --transicion: all 0.3s ease;
+}
+
+/* ==========================================
+   ESTILOS GENERALES
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    text-align: center;
+    flex: 1;
+}
+
+h2 {
+    color: var(--color-primario);
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+}
+
+/* Encabezado */
+.header {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    text-align: center;
+    padding: 2rem 0;
+}
+
+/* Navegación */
+.navbar {
+    background-color: var(--color-secundario);
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: var(--color-blanco);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: var(--transicion);
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: var(--color-primario);
+}
+
+/* ==========================================
+   GRILLAS Y TARJETAS
+   ========================================== */
+/* Grilla Categorías (Inicio) */
+.grid-categorias {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card-categoria {
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--color-texto);
+    box-shadow: var(--sombra-card);
+    overflow: hidden;
+    transition: var(--transicion);
+    display: block;
+}
+
+.card-categoria:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-categoria img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-categoria h3 {
+    padding: 15px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+}
+
+/* Grilla Juegos (Pantallas Internas) */
+.grid-juegos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-juego {
+    background-color: var(--color-blanco);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--sombra-card);
+    position: relative;
+    transition: var(--transicion);
+}
+
+.card-juego:hover {
+    transform: scale(1.03);
+}
+
+.card-juego img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.etiqueta-descuento {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--color-descuento);
+    color: var(--color-blanco);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.precio {
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+.precio-normal {
+    text-decoration: line-through;
+    color: #7f8c8d;
+    font-size: 1rem;
+    margin-right: 10px;
+}
+
+.precio-oferta {
+    color: var(--color-descuento);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.precio-unico {
+    font-weight: bold;
+    color: var(--color-primario);
+    font-size: 1.5rem;
+}
+
+.sin-descuento {
+    display: block;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    position: flex;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* ==========================================
+   ANIMACIONES CSS (Requisito Avanzado 2)
+   ========================================== */
+
+/* 1. Aparición gradual */
+.anim-fade-in {
+    animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* 2. Deslizamiento desde arriba */
+.anim-slide-down {
+    animation: slideDown 1s ease-out;
+}
+@keyframes slideDown {
+    from { transform: translateY(-100%); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* 3. Flotación constante (Para los títulos H2) */
+.anim-float {
+    animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* 4. Latido (Para las etiquetas de descuento) */
+.anim-pulse {
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+/* ==========================================
+   MEDIA QUERIES - RESPONSIVIDAD (Requisito Avanzado 3)
+   ========================================== */
+
+/* Adaptación para Tablets */
+@media (max-width: 992px) {
+    .grid-categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid-juegos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Adaptación para Teléfonos Móviles */
+@media (max-width: 768px) {
+    .grid-categorias {
+        grid-template-columns: 1fr;
+    }
+    .grid-juegos {
+        grid-template-columns: 1fr;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        width: 100%;
+        text-align: center;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
