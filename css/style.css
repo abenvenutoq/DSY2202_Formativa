@@ -1,6 +1,4 @@
-/* ==========================================
-   VARIABLES CSS (Requisito Avanzado 1)
-   ========================================== */
+/* Variables de estilos */
 :root {
     --color-primario: #2c3e50;
     --color-secundario: #e67e22;
@@ -13,9 +11,7 @@
     --transicion: all 0.3s ease;
 }
 
-/* ==========================================
-   ESTILOS GENERALES
-   ========================================== */
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -46,7 +42,7 @@ h2 {
     font-size: 2.5rem;
 }
 
-/* Encabezado */
+/* Header */
 .header {
     background-color: var(--color-primario);
     color: var(--color-blanco);
@@ -54,7 +50,7 @@ h2 {
     padding: 2rem 0;
 }
 
-/* Navegación */
+/* Barra Navegación */
 .navbar {
     background-color: var(--color-secundario);
     display: flex;
@@ -77,13 +73,11 @@ h2 {
     background-color: var(--color-primario);
 }
 
-/* ==========================================
-   GRILLAS Y TARJETAS
-   ========================================== */
-/* Grilla Categorías (Inicio) */
+
+/* Grid Categorías */
 .grid-categorias {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
 
@@ -115,7 +109,7 @@ h2 {
     color: var(--color-blanco);
 }
 
-/* Grilla Juegos (Pantallas Internas) */
+/* Grid Juegos*/
 .grid-juegos {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -197,39 +191,8 @@ footer {
     z-index: 100;
 }
 
-/* ==========================================
-   ANIMACIONES CSS (Requisito Avanzado 2)
-   ========================================== */
 
-/* 1. Aparición gradual */
-.anim-fade-in {
-    animation: fadeIn 1.5s ease-in-out;
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* 2. Deslizamiento desde arriba */
-.anim-slide-down {
-    animation: slideDown 1s ease-out;
-}
-@keyframes slideDown {
-    from { transform: translateY(-100%); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-/* 3. Flotación constante (Para los títulos H2) */
-.anim-float {
-    animation: float 3s ease-in-out infinite;
-}
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* 4. Latido (Para las etiquetas de descuento) */
+/* Animación para la etiqueta de descuento */
 .anim-pulse {
     animation: pulse 2s infinite;
 }
@@ -239,9 +202,6 @@ footer {
     100% { transform: scale(1); }
 }
 
-/* ==========================================
-   MEDIA QUERIES - RESPONSIVIDAD (Requisito Avanzado 3)
-   ========================================== */
 
 /* Adaptación para Tablets */
 @media (max-width: 992px) {
@@ -253,7 +213,7 @@ footer {
     }
 }
 
-/* Adaptación para Teléfonos Móviles */
+/* Adaptación para celulares */
 @media (max-width: 768px) {
     .grid-categorias {
         grid-template-columns: 1fr;
