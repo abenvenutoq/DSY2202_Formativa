@@ -13,9 +13,7 @@
     --transicion: all 0.3s ease;
 }
 
-/* ==========================================
-   ESTILOS GENERALES
-   ========================================== */
+/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
@@ -195,6 +193,9 @@ footer {
     z-index: 100;
 }
 
+/* ==========================================
+   ANIMACIONES CSS (Requisito Avanzado 2)
+   ========================================== */
 
 /* 1. Aparición gradual */
 .anim-fade-in {
@@ -235,6 +236,9 @@ footer {
 }
 
 
+/* ==========================================
+   MEDIA QUERIES (Requisito Avanzado 3)
+   ========================================== */
 
 /* Adaptación para Tablets */
 @media (max-width: 992px) {
