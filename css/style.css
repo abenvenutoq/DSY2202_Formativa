@@ -270,3 +270,27 @@ footer {
         font-size: 2rem;
     }
 }
+
+/* ==========================================
+   Estilos nuevos para formularios
+   ========================================== */
+
+/* Tarjeta contenedora del formulario */
+.card-formulario {
+    max-width: 800px;
+    border-radius: 15px;
+    border: 1px solid var(--color-secundario);
+}
+
+/* Estilo unificado para el botón de Registro y botón de Enviar */
+.btn-primario-custom {
+    background-color: var(--color-primario);
+    color: var(--color-blanco);
+    border: 2px solid var(--color-blanco);
+}
+
+.btn-primario-custom:hover {
+    background-color: var(--color-secundario);
+    color: var(--color-blanco);
+    border-color: var(--color-blanco);
+}

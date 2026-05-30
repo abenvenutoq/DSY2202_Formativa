@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro | El Dado de Madera</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <header class="header anim-slide-down">
+        <h1>El Dado de Madera</h1>
+        <p>Únete a nuestra comunidad de jugadores</p>
+    </header>
+
+    <nav class="navbar navbar-expand-md navbar-dark anim-fade-in px-4">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavegacion" aria-controls="menuNavegacion" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menuNavegacion">
+                
+                <div class="d-flex flex-column flex-md-row justify-content-left align-items-center flex-grow-1 gap-3 mt-3 mt-md-0">
+                    <a href="index.html">Inicio</a>
+                    <a href="estrategia.html">Estrategia</a>
+                    <a href="familiar.html">Familiares</a>
+                    <a href="rol.html">Rol</a>
+                    <a href="cooperativo.html">Cooperativos</a>
+                </div>
+
+                <div class="ms-md-auto mt-3 mt-md-0 text-center">
+                    <a href="formulario.html" class="btn fw-bold shadow-sm btn-primario-custom">
+                        📝 Registro Usuarios
+                    </a>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+    <main class="container anim-fade-in">
+        <h2>Crea tu Cuenta</h2>
+        
+        <div class="card shadow p-4 mx-auto card-formulario">
+            
+            <form id="formRegistro" novalidate>
+                <div class="row g-3 text-start">
+                    
+                    <div class="col-12 col-md-6">
+                        <label for="nombre" class="form-label fw-bold">Nombre Completo *</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ej. Juan Pérez">
+                        <div class="invalid-feedback">El nombre no puede estar vacío.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="usuario" class="form-label fw-bold">Nombre de Usuario *</label>
+                        <input type="text" class="form-control" id="usuario" placeholder="Crea un usuario único">
+                        <div class="invalid-feedback">El usuario no puede estar vacío.</div>
+                    </div>
+
+                    <div class="col-12">
+                        <label for="email" class="form-label fw-bold">Correo Electrónico *</label>
+                        <input type="email" class="form-control" id="email" placeholder="ejemplo@correo.com">
+                        <div class="invalid-feedback">Debes ingresar un correo válido (ej: nombre@dominio.com).</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="password" class="form-label fw-bold">Contraseña *</label>
+                        <input type="password" class="form-control" id="password" placeholder="Entre 6 y 18 caracteres">
+                        <div class="invalid-feedback" id="error-password">Debe tener entre 6-18 caracteres, una mayúscula y un número.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="confirmPassword" class="form-label fw-bold">Repetir Contraseña *</label>
+                        <input type="password" class="form-control" id="confirmPassword" placeholder="Repite tu contraseña">
+                        <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="fechaNacimiento" class="form-label fw-bold">Fecha de Nacimiento *</label>
+                        <input type="date" class="form-control" id="fechaNacimiento">
+                        <div class="invalid-feedback">Debes tener al menos 13 años para registrarte.</div>
+                    </div>
+
+                    <div class="col-12 col-md-6">
+                        <label for="direccion" class="form-label fw-bold">Dirección de Despacho (Opcional)</label>
+                        <input type="text" class="form-control" id="direccion" placeholder="Calle, número, comuna">
+                        <div class="valid-feedback">¡Excelente! Listo para despachos.</div>
+                    </div>
+
+                </div>
+
+                <div class="mt-4 d-flex flex-wrap justify-content-center gap-3">
+                    <button type="submit" class="btn fw-bold px-4 py-2 btn-primario-custom">Enviar Registro</button>
+                    <button type="reset" class="btn btn-secondary fw-bold px-4 py-2" id="btnLimpiar">Limpiar Formulario</button>
+                </div>
+                
+                <div id="mensajeExito" class="alert alert-success mt-4 d-none fw-bold text-center" role="alert">
+                    ¡Registro validado y completado con éxito! 🎉
+                </div>
+
+                <div id="mensajeError" class="alert alert-danger mt-4 d-none fw-bold text-center" role="alert">
+                    ¡Revisa tus datos y los campos obligatorios!❌
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 El Dado de Madera - Proyecto Formativo</p>
+    </footer>
+</body>
+</html>
